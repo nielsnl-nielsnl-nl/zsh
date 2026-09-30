@@ -12,7 +12,7 @@ format = "[$symbol](#blue) "
 Ubuntu  = "󰕈"
 Artix   = "󰣇"
 Arch    = "󰣇"
-CachyOS = "󰣇"
+CachyOS = "..."
 Macos   = ""
 
 [directory]
