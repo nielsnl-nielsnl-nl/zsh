@@ -1,7 +1,7 @@
 # zsh
 
 Powerful but tastefully minimal zsh configuration.
-
+Video https://www.youtube.com/watch?v=1jE7rCvByHg
 ## Dependencies
 
 ### Arch
