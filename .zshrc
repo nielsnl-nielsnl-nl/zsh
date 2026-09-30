@@ -123,3 +123,14 @@ source "$ZDOTDIR/prompt.zsh"
 if [[ -f "$ZDOTDIR/local.zsh" ]]; then
   source "$ZDOTDIR/local.zsh"
 fi
+
+# pull config updates in the background, at most once a day
+() {
+  local stamp=$HOME/.cache/zsh/last-update
+  local -a fresh=($stamp(N.mh-24))
+  if (( ! $#fresh )); then
+    touch $stamp
+    (git -C $ZDOTDIR pull --ff-only -q &>/dev/null &)
+  fi
+}
+alias zsh-sync='git -C $ZDOTDIR pull --ff-only && exec zsh'
